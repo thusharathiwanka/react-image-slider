@@ -20,15 +20,19 @@ code {
 .slider {
   height: 100vh;
   display: flex;
+  overflow: hidden;
   justify-content: center;
   align-items: center;
   position: relative;
+  width: 100%;
 }
 
 .image {
   width: 1200px;
   height: 800px;
   border-radius: 10px;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .left-arrow,
@@ -37,7 +41,7 @@ code {
   top: 50%;
   right: 100px;
   font-size: 3.2rem;
-  color: rgb(49, 49, 49);
+  color: rgb(149, 149, 149);
   z-index: 10;
   cursor: pointer;
   user-select: none;
@@ -56,4 +60,38 @@ code {
   opacity: 1;
   transition-duration: 1s;
   transform: scale(1.08);
+}
+
+@media screen and (max-width: 1295px) {
+  .right-arrow {
+    right: 40px;
+  }
+
+  .left-arrow {
+    left: 40px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .right-arrow,
+  .left-arrow {
+    font-size: 2rem;
+    right: 20px;
+  }
+
+  .left-arrow {
+    left: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .right-arrow,
+  .left-arrow {
+    font-size: 1.2rem;
+    right: 10px;
+  }
+
+  .left-arrow {
+    left: 10px;
+  }
 }
